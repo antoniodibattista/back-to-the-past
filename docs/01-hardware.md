@@ -9,7 +9,7 @@ Asem S.p.A. (Italia) produce PC industriali e panel PC con touchscreen. I nostri
 | CPU | **Intel Atom D525** ✅ confermato | Pineview (2010), dual-core 1.8 GHz, 4 thread (HT), 64-bit |
 | GPU | **Intel GMA 3150** (integrata nel D525) | ⚠️ niente accelerazione 3D utilizzabile su Linux moderno → vincola la scelta dell'OS |
 | RAM | **2 GB** | confermare ev. espandibilità |
-| Storage | **128 GB+** | tipo da verificare (SSD SATA / mSATA / eMMC) |
+| Storage | **SSD SanDisk U100 — 32 GB** (29.8 GiB) ✅ confermato | disco unico, SATA; ~26 GB liberi per i giochi dopo l'OS |
 | Display | Touchscreen | risoluzione + tecnologia touch (resistivo/capacitivo) da verificare |
 | I/O | USB (per joypad), eventuale seriale/LAN | n° porte USB libere da verificare |
 

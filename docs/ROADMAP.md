@@ -1,6 +1,6 @@
 # ROADMAP — Back To The Past
 
-Stato a oggi: **progettazione completata, hardware Asem #1 identificato (Atom D525 / GMA 3150), inizio installazione.**
+Stato a oggi: **Asem #1: Batocera V5.25 installata e funzionante su SSD interna. Prossimo: livello "kiosk" (tema, config, giochi).**
 
 ## Fase 0 — Progettazione ✅
 - [x] Definire obiettivi e vincoli (Atom 64-bit, 2 GB RAM, touch + joypad)
@@ -9,17 +9,17 @@ Stato a oggi: **progettazione completata, hardware Asem #1 identificato (Atom D5
 - [x] Definire l'architettura a livelli e il livello "kiosk" come nostro deliverable
 - [x] Documentazione di base + struttura repo
 
-## Fase 1 — Ricognizione hardware
+## Fase 1 — Ricognizione hardware ✅
 - [x] Identificato modello CPU/GPU Asem #1: **Atom D525 (Pineview) + GMA 3150**, 64-bit
 - [x] Decisa build OS: **Batocera "Intel Atom / old low-powered (V5.25)"** (la GMA 3150 esclude le build moderne)
-- [ ] Boot live di Batocera (V5.25) su Asem #1
-- [ ] Eseguire `scripts/check-hardware.sh` e annotare il resto (RAM esatta, dischi, touch, USB)
-- [ ] Verificare riconoscimento touchscreen + joypad USB
+- [x] Boot live di Batocera (V5.25) su Asem #1 — ES gira fluida, NES testato OK (8+ min, GMA 3150 regge il 2D)
+- [x] Hardware confermato: disco unico = **SSD SanDisk U100 32 GB**, rete **eth0** (DHCP, WiFi off)
 
-## Fase 2 — Installazione base
-- [ ] Installare Batocera sul disco interno dell'Asem #1
-- [ ] Configurare lingua/tastiera/rete
-- [ ] Prima configurazione joypad
+## Fase 2 — Installazione base ✅ (Asem #1)
+- [x] Batocera V5.25 installata sul disco interno (metodo `dd`, vedi [03 — Fase 4](03-installazione.md)); area dati auto-espansa a ~26 GB
+- [x] Rete OK (eth0 DHCP)
+- [ ] Lingua/tastiera da rifinire
+- [ ] Prima configurazione joypad (quando arrivano)
 
 ## Fase 3 — Livello "Back To The Past" (sviluppo nel repo)
 - [ ] Tema EmulationStation "Back To The Past" (`theme/`)

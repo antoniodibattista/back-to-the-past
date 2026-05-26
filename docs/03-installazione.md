@@ -21,9 +21,11 @@ Flusso completo: dal portatile di sviluppo ai due cabinati Asem.
 ## Fase 2 — Creare la chiavetta avviabile
 
 Con balenaEtcher:
-1. *Flash from file* → seleziona `batocera-x86_64-*.img.gz` (non serve scompattarlo).
+1. *Flash from file* → seleziona `batocera-5.25-x86-*.img.gz` (non serve scompattarlo).
 2. *Select target* → la chiavetta USB.
 3. *Flash!* e attendi.
+
+> Se balenaEtcher si blocca: usa **USBImager** (gestisce direttamente il `.img.gz`) o **Rufus** (in modalità **DD**). Eseguilo come amministratore e usa una porta USB 2.0.
 
 ## Fase 3 — Primo avvio LIVE sull'Asem (senza installare)
 
@@ -34,17 +36,50 @@ Con balenaEtcher:
 
 > Se i 2 GB rendessero EmulationStation troppo pesante, qui valutiamo il piano B (Lakka). Vedi [02](02-sistema-operativo.md).
 
-## Fase 4 — Installazione su disco interno
+## Fase 4 — Installazione su disco interno (procedura testata su Asem #1)
 
-Avendo 128 GB+, installiamo Batocera sul disco interno per prestazioni e comodità.
+> ⚠️ **Lezione dall'Asem #1:** il classico **MENU → SYSTEM SETTINGS → INSTALL ON A NEW DISK** (e il comando `batocera-install`) **non va bene** per noi:
+> 1. su V5.25 quel comando **scarica da internet l'ultima Batocera** (che sul D525/GMA 3150 non funziona), non installa la V5.25 che stai usando;
+> 2. se il disco interno ha già un OS e `sharedevice=INTERNAL`, Batocera **monta il disco interno come `/userdata`**: l'installer non riesce a smontarlo e fallisce con *"AN ERROR OCCURED: check the system/logs directory"* (exit 256).
+>
+> Il metodo affidabile è **scrivere la stessa immagine V5.25 sul disco con `dd`** (è esattamente ciò che l'installer fa internamente: `zcat img.gz | dd of=/dev/sdX`).
 
-1. Dal menu EmulationStation: **MENU → SYSTEM SETTINGS → INSTALL ON A NEW DISK** (oppure terminale: `batocera-install`).
-2. Seleziona il disco interno dell'Asem come destinazione (**attenzione: cancella il disco**).
-3. Conferma, attendi, rimuovi la chiavetta e riavvia.
+**Accesso:** SSH `root@<ip-asem>`, password `linux` (IP in MENU → NETWORK SETTINGS). Su Windows si passa la password con `sshpass`, es.:
+`sshpass -p linux ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=NUL root@<ip>`
+
+1. **Libera il disco interno**: rendi scrivibile `/boot`, metti `sharedevice=RAM`, riavvia.
+   ```sh
+   mount -o remount,rw /boot
+   sed -i s/sharedevice=INTERNAL/sharedevice=RAM/ /boot/batocera-boot.conf
+   reboot
+   ```
+2. **Smonta il disco interno** se auto-montato come drive esterno (verifica con `grep /dev/sda /proc/mounts`, dev'essere vuoto):
+   ```sh
+   umount /dev/sda1
+   ```
+3. **Porta l'immagine V5.25 sull'Asem** (in `/boot`, che ha spazio):
+   ```sh
+   # dal portatile:
+   scp batocera-5.25-x86-*.img.gz root@<ip>:/boot/
+   ```
+4. **Scrivi l'immagine sul disco** — ⚠️ CANCELLA TUTTO (anche un OS preesistente):
+   ```sh
+   zcat /boot/batocera-5.25-x86-*.img.gz | dd of=/dev/sda bs=4M
+   sync
+   ```
+5. **Abilita l'auto-espansione** dell'area dati sul disco appena scritto:
+   ```sh
+   mkdir -p /tmp/sb && mount /dev/sda1 /tmp/sb
+   sed -i s/#autoresize=true/autoresize=true/ /tmp/sb/batocera-boot.conf
+   sync && umount /tmp/sb
+   ```
+6. **Spegni, togli la chiavetta, riaccendi.** Parte da disco; il primo avvio **espande `/userdata`** a tutto il disco (può riavviarsi una volta da solo).
+
+> ⚠️ Identifica bene il disco: `/dev/sda` = SSD interna (`TRAN=ata`), `/dev/sdb` = chiavetta USB (`TRAN=usb`). Controlla con `lsblk -o NAME,SIZE,TRAN,MODEL`.
 
 Al riavvio Batocera parte dal disco. Lo storage è diviso in:
-- **sistema** (read-only, aggiornabile)
-- **`userdata`** ← qui vivono ROM, configurazioni, salvataggi, temi → **è ciò che deployamo noi**.
+- partizione **BATOCERA** (sistema, read-only)
+- partizione **SHARE → `/userdata`** ← qui vivono ROM, configurazioni, salvataggi, temi → **è ciò che deployamo noi**.
 
 ## Fase 5 — Deploy del nostro livello "Back To The Past"
 
@@ -80,12 +115,15 @@ Stessa procedura. Il bello del repo è che il deploy è **identico e riproducibi
 
 ## Checklist rapida
 
-- [ ] Immagine Batocera x86_64 scaricata
-- [ ] Chiavetta USB creata (Etcher/Rufus)
-- [ ] Boot live su Asem #1 OK
-- [ ] `check-hardware.sh` eseguito e specifiche annotate
-- [ ] Touch + joypad riconosciuti
-- [ ] Installazione su disco interno
+**Asem #1:**
+- [x] Immagine Batocera V5.25 (x86) scaricata
+- [x] Chiavetta USB creata
+- [x] Boot live su Asem #1 OK
+- [x] Hardware verificato (Atom D525, GMA 3150, SSD 32 GB, eth0)
+- [x] Installazione su disco interno (metodo `dd`, area dati espansa a ~26 GB)
 - [ ] Deploy tema/config/giochi
 - [ ] Kiosk + controlli configurati
-- [ ] Ripetuto su Asem #2
+
+**Asem #2:**
+- [ ] Ripetere installazione (stessa procedura `dd`)
+- [ ] Deploy + kiosk
