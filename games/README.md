@@ -45,6 +45,12 @@ Formato ScummVM su Batocera: una **cartella per gioco** coi file dati, più un f
 
 > I dati dei giochi ScummVM (`sky.dsk`, `queen.1c`, …) NON sono nel repo (troppo grandi e meglio scaricarli dalla fonte ufficiale). Per l'Asem #2: riscaricali da scummvm.org con gli stessi URL.
 
+## Doom completo: Freedoom (open source)
+
+Installato **Freedoom** v0.13.0 in `/userdata/roms/prboom/`: `freedoom1.wad` (Fase 1, stile Doom 1) e `freedoom2.wad` (Fase 2, stile Doom 2) — FPS **completo e gratuito** (licenza BSD) sul motore Doom. Non è il Doom *originale* (commerciale): chi possiede `DOOM.WAD`/`DOOM2.WAD` (~12-14 MB) può aggiungerli da sé.
+
+Download ufficiale: https://github.com/freedoom/freedoom/releases → estrai i due `.wad` in `roms/prboom/`. (Stessa cosa per Asem #2; i WAD non sono nel repo perché rigenerabili.)
+
 ## Locandine / box art (scraping)
 
 Su Asem #1 le immagini (copertina, miniatura, marquee) sono state scaricate con lo **scraper integrato** di Batocera (ScreenScraper): **tutti** i giochi hanno la grafica. Stanno in `/userdata/roms/<sistema>/images/`, collegate nelle `gamelist.xml` (ES le scrive alla chiusura). NON versionate nel repo (rigenerabili).
