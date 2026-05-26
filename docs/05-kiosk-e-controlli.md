@@ -33,6 +33,20 @@ Batocera può mostrare uno **screensaver/attract** con video o immagini dei gioc
 
 Strategia decisa: **touch per navigare i menu, joypad USB per giocare.**
 
+### Fase di test: solo tastiera + mouse (joypad non ancora acquistati)
+
+Per testare tutto lo stack prima di comprare i joypad, **tastiera e mouse bastano**.
+
+- **EmulationStation:** frecce per navigare, **Invio** per selezionare. Al primo avvio, se non c'è joypad, tieni premuto un tasto e parte "CONFIGURE A CONTROLLER": mappa la tastiera (modo più affidabile).
+- **Mapping tastiera predefinito (RetroArch):** D-pad = frecce, B = `Z`, A = `X`, Y = `A`, X = `S`, Start = `Invio`, Select = `Shift destro`, L/R = `Q`/`W`. Rimappabile in *CONTROLLER SETTINGS*.
+- **Mouse/touch:** utili per i sistemi "puntatore" (DOS punta-e-clicca, Amiga/C64). Per arcade/console 2D meglio la tastiera.
+
+> La tastiera consente di provare menu, emulatori e prestazioni sulla GMA 3150. I joypad servono solo per il feeling "cabinato".
+
+### Acquisto joypad (target 2D)
+
+Conta più il **d-pad** degli stick: pad stile **SNES-USB** (economici) o **8BitDo** (SN30/M30). Per il vero cabinato, in futuro: joystick + pulsanti arcade con **encoder USB** (Zero-Delay), che Batocera vede come un normale joypad.
+
 ### Joypad USB
 - Batocera riconosce automaticamente la maggior parte dei joypad USB.
 - Prima configurazione: `MENU → CONTROLLER SETTINGS → CONFIGURE A CONTROLLER` e segui il mapping guidato.
