@@ -20,6 +20,31 @@ Ogni sottocartella corrisponde a un sistema di Batocera e va in `/userdata/roms/
 
 (Nomi cartella esatti = quelli attesi da Batocera; vedi wiki.)
 
+## Giochi attualmente installati su Asem #1 (tutti legali)
+
+**Inclusi di serie in Batocera V5.25** (homebrew/freeware):
+
+| Sistema | Gioco |
+|---|---|
+| Mega Drive | Old-Towers |
+| NES | 2048 |
+| SNES | Donkey Kong Classic (Shiru) |
+| PC Engine | Reflectron, Santatlantean (aetherbyte) |
+| GBA | SpaceTwins |
+| C64 | The Great Giana Sisters, Super Mario Bros 64 |
+| Doom (prboom) | Doom (shareware) |
+
+**Aggiunti da noi — ScummVM (avventure freeware ufficiali, giocabili col touch/mouse):**
+
+| Gioco | gameid | Fonte | Setup |
+|---|---|---|---|
+| Beneath a Steel Sky | `sky` | scummvm.org (BASS-Floppy-1.3.zip) | `roms/scummvm/BeneathASteelSky/` + `sky.scummvm` |
+| Flight of the Amazon Queen | `queen` | scummvm.org (FOTAQ_Talkie-1.1.zip) | `roms/scummvm/AmazonQueen/` + `queen.scummvm` |
+
+Formato ScummVM su Batocera: una **cartella per gioco** coi file dati, più un file vuoto **`<gameid>.scummvm`** (ES lancia `scummvm -p <cartella> <gameid>`). Nomi visualizzati definiti in [`config/scummvm-gamelist.xml`](../config/scummvm-gamelist.xml) → deploy in `/userdata/roms/scummvm/gamelist.xml`.
+
+> I dati dei giochi ScummVM (`sky.dsk`, `queen.1c`, …) NON sono nel repo (troppo grandi e meglio scaricarli dalla fonte ufficiale). Per l'Asem #2: riscaricali da scummvm.org con gli stessi URL.
+
 ## Aggiungere giochi
 - **Liberi (homebrew/PD/shareware):** ok inserirli, ma **annota la licenza** in un `README` o `LICENSE.txt` nella relativa cartella.
 - **Propri (dump di cartucce che possiedi):** copiali direttamente su `/userdata/roms/<sistema>/` dell'Asem — **non** nel repo.

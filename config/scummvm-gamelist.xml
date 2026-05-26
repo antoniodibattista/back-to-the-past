@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!-- Gamelist per il sistema ScummVM. Deploy su: /userdata/roms/scummvm/gamelist.xml
+     Giochi freeware ufficiali (scummvm.org) - vedi games/README.md -->
+<gameList>
+	<game>
+		<path>./BeneathASteelSky/sky.scummvm</path>
+		<name>Beneath a Steel Sky</name>
+		<desc>Avventura grafica cyberpunk (1994). Freeware ufficiale rilasciato da Revolution Software via ScummVM. Si gioca col mouse/touch.</desc>
+		<genre>Avventura grafica</genre>
+		<releasedate>19940101T000000</releasedate>
+	</game>
+	<game>
+		<path>./AmazonQueen/queen.scummvm</path>
+		<name>Flight of the Amazon Queen</name>
+		<desc>Avventura grafica comica (1995) in stile Indiana Jones. Freeware ufficiale via ScummVM (versione parlata in inglese). Si gioca col mouse/touch.</desc>
+		<genre>Avventura grafica</genre>
+		<releasedate>19950101T000000</releasedate>
+	</game>
+</gameList>
