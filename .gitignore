@@ -1,0 +1,65 @@
+# === Back To The Past — gitignore ===
+
+# --- ROM e giochi (copyright!) — vedi docs/06-legale.md ---
+# Non committare ROM/BIOS. Si versiona solo la STRUTTURA delle cartelle
+# e i giochi esplicitamente liberi (homebrew/PD) in games/, tracciati a mano.
+games/**/*
+!games/**/
+!games/**/README.md
+!games/**/*.txt
+!games/**/.gitkeep
+
+# Estensioni ROM comuni (blocco di sicurezza, ovunque nel repo)
+*.zip
+*.7z
+*.rar
+*.iso
+*.bin
+*.cue
+*.chd
+*.nes
+*.sfc
+*.smc
+*.gb
+*.gbc
+*.gba
+*.md
+*.gen
+*.sms
+*.gg
+*.pce
+*.a26
+*.d64
+*.adf
+*.img
+# Eccezione: i file markdown di documentazione NON vanno ignorati
+!*.md
+!**/*.md
+
+# --- BIOS ---
+bios/
+*.bios
+
+# --- Immagini di sistema / installer (troppo grandi per git) ---
+*.gz
+*.xz
+*.squashfs
+
+# --- Build / artefatti ---
+build/
+dist/
+tmp/
+*.log
+
+# --- OS junk ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Editor ---
+.vscode/
+.idea/
+*.swp
+
+# --- Claude Code (impostazioni locali) ---
+.claude/settings.local.json
