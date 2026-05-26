@@ -16,4 +16,13 @@ File di configurazione versionati, da deployare su `/userdata` dell'Asem. Servon
 2. Si copiano i file risultanti da `/userdata` **dentro questo repo** (`config/`).
 3. Si versiona e si **deploya** sul 2° Asem → setup identico.
 
-> ⚠️ Questi file sono specifici di Batocera: vanno popolati **dopo** la prima installazione (Fase 2-3 della [ROADMAP](../docs/ROADMAP.md)). Per ora la cartella è un segnaposto.
+## Stato
+
+- ✅ **`batocera.conf`** — file reale catturato dall'Asem #1 (deploy diretto in `/userdata/system/`). Impostazioni chiave attive:
+  - `system.language=it_IT`, `system.kblayout=it`, `system.timezone=Europe/Rome`
+  - `updates.enabled=0` → **niente aggiornamenti automatici** (la V5.25 NON va aggiornata: romperebbe la GMA 3150)
+  - Tuning GMA 3150: `global.shaderset=none`, `global.bezel=none`, `global.rewind=0`, `global.smooth=0`, `global.integerscale=0`, `global.ratio=auto`
+- ⏳ `es_settings.cfg` (UI Kiosk, screensaver) — da fare in fase kiosk
+- ⏳ `controllers/` — da fare quando arrivano i joypad
+
+> Per l'Asem #2: copiare `batocera.conf` in `/userdata/system/` e riavviare.
