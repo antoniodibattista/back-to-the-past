@@ -28,11 +28,12 @@ Stato a oggi: **Asem #1: Batocera V5.25 installata e funzionante su SSD interna.
 - [ ] Script `deploy.sh` (push del repo su `/userdata` via SSH/rsync)
 - [ ] Selezione/struttura giochi + giochi liberi inclusi (`games/`)
 
-## Fase 4 — Kiosk & finalizzazione
-- [ ] Modalità Kiosk + sequenza di sblocco manutenzione
-- [ ] Attract mode / screensaver
-- [ ] Splash di boot brandizzato
-- [ ] Tuning prestazioni per sistema (shader off, rewind off, core leggeri)
+## Fase 4 — Kiosk & finalizzazione (Asem #1)
+- [x] Modalità **Kiosk** attiva + sblocco manutenzione via SSH (vedi [05](05-kiosk-e-controlli.md))
+- [x] Screensaver (dim a 5 min, protegge il pannello)
+- [x] Tuning prestazioni GMA 3150 (shader/bezel off, rewind/smooth off) — in `config/batocera.conf`
+- [ ] Splash di boot brandizzato "Back To The Past"
+- [ ] Attract mode con video/immagini (richiede scraping dei giochi)
 
 ## Fase 5 — Clonazione su Asem #2
 - [ ] Ripetere installazione + deploy

@@ -12,11 +12,21 @@ EmulationStation (Batocera) ha tre **UI Mode**:
 | **Kiosk** ✅ | Solo i giochi e poche opzioni; menu di configurazione **nascosto** |
 | **Kid** | Ancora più ristretta (solo giochi marcati "kid") |
 
-Useremo **Kiosk** sui cabinati.
+Usiamo **Kiosk** sui cabinati. ✅ **Attivo su Asem #1.**
 
-- Impostazione: `MENU → UI SETTINGS → UI MODE → Kiosk`.
-- In `es_settings.cfg`: `<string name="UIMode" value="Kiosk" />`.
-- Per **rientrare** in Full mode (manutenzione) c'è una sequenza/passphrase di sblocco (es. inserire un codice col joypad). La documenteremo in `config/`.
+- Impostazione (GUI): `MENU → UI SETTINGS → UI MODE → Kiosk`.
+- In `es_settings.cfg`: `<string name="UIMode" value="Kiosk" />` (file reale in [`config/es_settings.cfg`](../config/es_settings.cfg)).
+- ⚠️ ES **riscrive** `es_settings.cfg` quando si chiude: per modificarlo via SSH bisogna **fermare ES, editare, riavviare ES** (vedi sblocco sotto).
+
+### 🔧 Sblocco per manutenzione (tornare a Full)
+In Kiosk il menu impostazioni è nascosto. Per rientrare in Full mode, via SSH dal portatile:
+```sh
+ssh root@<ip-asem>            # password: linux
+/etc/init.d/S31emulationstation stop
+sed -i 's/value="Kiosk"/value="Full"/' /userdata/system/configs/emulationstation/es_settings.cfg
+/etc/init.d/S31emulationstation start
+```
+Finita la manutenzione, stesso giro al contrario (`Full` → `Kiosk`). Questo è il "backdoor" affidabile del cabinato.
 
 ### Altri accorgimenti di lockdown
 - **Avvio diretto** su EmulationStation (default Batocera, nessun desktop).
