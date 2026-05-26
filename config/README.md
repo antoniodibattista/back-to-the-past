@@ -26,3 +26,8 @@ File di configurazione versionati, da deployare su `/userdata` dell'Asem. Servon
 - ⏳ `controllers/` — da fare quando arrivano i joypad
 
 > Per l'Asem #2: copiare `batocera.conf` in `/userdata/system/` e riavviare.
+
+## Patch di sistema — `patches/`
+
+- **`patches/viceControllers.py`** — corregge un bug di Batocera V5.25: i giochi **C64 (vice) crashano all'avvio se non c'è un joypad** collegato (`listVice` usato prima di essere inizializzato). Deploy: copiare in `/usr/lib/python2.7/site-packages/configgen/generators/vice/viceControllers.py`, rimuovere il `.pyc` accanto, poi **`batocera-save-overlay`** per renderla permanente.
+  > ⚠️ Le modifiche al sistema `/` stanno in RAM e si perdono al riavvio: serve `batocera-save-overlay`. `/userdata` (config, rom, temi) è invece persistente.
