@@ -22,7 +22,7 @@ File di configurazione versionati, da deployare su `/userdata` dell'Asem. Servon
   - `system.language=it_IT`, `system.kblayout=it`, `system.timezone=Europe/Rome`
   - `updates.enabled=0` → **niente aggiornamenti automatici** (la V5.25 NON va aggiornata: romperebbe la GMA 3150)
   - Tuning GMA 3150: `global.shaderset=none`, `global.bezel=none`, `global.rewind=0`, `global.smooth=0`, `global.integerscale=0`, `global.ratio=auto`
-- ✅ **`es_settings.cfg`** — attivo su Asem #1: `UIMode=Kiosk` (lockdown), screensaver `dim` a 5 min. Deploy in `/userdata/system/configs/emulationstation/`. ⚠️ ES lo riscrive in chiusura: per editarlo via SSH, **fermare ES → editare → riavviare ES** (vedi [docs/05](../docs/05-kiosk-e-controlli.md))
+- ✅ **`es_settings.cfg`** — `UIMode=Kiosk` (lockdown). **Screensaver DISABILITATO** (`ScreenSaverTime=0`): il "dim" a 5 min causava **blocco al risveglio** sulla GMA 3150 (audio che continua, schermo scuro che non si riattiva). Deploy in `/userdata/system/configs/emulationstation/`. ⚠️ ES riscrive il file in chiusura: per editarlo via SSH, **fermare ES → editare → riavviare ES** (vedi [docs/05](../docs/05-kiosk-e-controlli.md))
 - ⏳ `controllers/` — da fare quando arrivano i joypad
 
 > Per l'Asem #2: copiare `batocera.conf` in `/userdata/system/` e riavviare.
