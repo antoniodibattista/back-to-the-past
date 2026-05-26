@@ -45,6 +45,12 @@ Formato ScummVM su Batocera: una **cartella per gioco** coi file dati, più un f
 
 > I dati dei giochi ScummVM (`sky.dsk`, `queen.1c`, …) NON sono nel repo (troppo grandi e meglio scaricarli dalla fonte ufficiale). Per l'Asem #2: riscaricali da scummvm.org con gli stessi URL.
 
+## Locandine / box art (scraping)
+
+Su Asem #1 le immagini (copertina, miniatura, marquee) sono state scaricate con lo **scraper integrato** di Batocera (ScreenScraper): **tutti** i giochi hanno la grafica. Stanno in `/userdata/roms/<sistema>/images/`, collegate nelle `gamelist.xml` (ES le scrive alla chiusura). NON versionate nel repo (rigenerabili).
+
+**Per l'Asem #2** (dopo aver caricato i giochi): `MENU → SCRAPER → ScreenScraper → All Games → Scrape Now`. Serve UI Mode = **Full** (lo scraper è nascosto in Kiosk → vedi sblocco in [docs/05](../docs/05-kiosk-e-controlli.md)); poi si rimette Kiosk.
+
 ## Aggiungere giochi
 - **Liberi (homebrew/PD/shareware):** ok inserirli, ma **annota la licenza** in un `README` o `LICENSE.txt` nella relativa cartella.
 - **Propri (dump di cartucce che possiedi):** copiali direttamente su `/userdata/roms/<sistema>/` dell'Asem — **non** nel repo.

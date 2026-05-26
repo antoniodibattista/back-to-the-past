@@ -24,9 +24,11 @@ back-to-the-past/
 - Evitare video-snap e animazioni pesanti nelle gamelist (RAM/CPU limitate).
 - Riferimento formato temi: https://wiki.batocera.org/themes
 
-## Stato: v1 attiva su Asem #1 ✅
+## Stato: v1 costruita, tenuta come alternativa
 
-Tema **`back-to-the-past/`** costruito e in uso. Stile **synthwave/arcade**: sfondo scuro con sole magenta e griglia neon, font pixel, accenti ciano/magenta.
+Tema **`back-to-the-past/`** completo (stile **synthwave/arcade**: sfondo scuro con sole magenta e griglia neon, font pixel, accenti ciano/magenta). 
+
+⚠️ **Non è il tema attivo.** Su Asem #1 usiamo **es-theme-carbon** perché ha già tutte le **grafiche delle console/sistemi** pronte (il nostro tema mostra i sistemi solo come testo). Carbon + le **locandine** scaricate con lo scraper danno il risultato migliore. Il nostro tema resta nel repo come base/alternativa: per renderlo competitivo servirebbero ~15 loghi di sistema in `art/logos/`.
 
 Contenuto:
 - `theme.xml` — viste `system` / `basic` / `detailed` (ES formatVersion 7), solo immagini statiche (niente video/shader → leggero per la GMA 3150)
