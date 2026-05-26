@@ -1,0 +1,8 @@
+# Normalizzazione fine-riga.
+# Gli script girano su Linux/Batocera: DEVONO avere fine-riga LF,
+# altrimenti CRLF rompe lo shebang ("bad interpreter").
+*       text=auto
+*.sh    text eol=lf
+*.cfg   text eol=lf
+*.conf  text eol=lf
+*.xml   text eol=lf
