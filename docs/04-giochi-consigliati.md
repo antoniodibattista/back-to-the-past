@@ -1,6 +1,6 @@
 # 04 — Giochi consigliati & tuning per Atom + 2 GB
 
-La regola d'oro: **arcade anni 80/90 e console fino alla 4ª/5ª generazione**. Tutto ciò che è 3D pesante è fuori portata.
+La regola d'oro (Atom D525 / GMA 3150): **arcade 2D anni 80/90 e console fino alla 4ª generazione**. Niente 3D — la GPU non lo accelera.
 
 ## ✅ Sistemi che girano bene
 
@@ -21,15 +21,12 @@ La regola d'oro: **arcade anni 80/90 e console fino alla 4ª/5ª generazione**. 
 | **Amiga** | `puae` | OK per titoli classici; alcuni richiedono kickstart BIOS. |
 | **MS-DOS** | `dosbox_pure` | Ottimo per i classici DOS (Prince of Persia, Doom shareware, Commander Keen…). |
 
-## ⚠️ Al limite (caso per caso)
+## ❌ Fuori portata su Atom D525 + GMA 3150 + 2 GB
 
-| Sistema | Note |
-|---|---|
-| **PlayStation 1** | `pcsx_rearmed`. Titoli 2D leggeri *forse* ok; molti 3D arrancano su Atom. Da provare, non garantito. |
+- **PlayStation 1** — escluso: senza accelerazione 3D (GMA 3150) `pcsx_rearmed` non regge. *(Era "al limite" finché non sapevamo la GPU.)*
+- N64, PSP, Dreamcast, Sega Saturn, PS2, GameCube/Wii, Naomi, e qualsiasi sistema 3D. **Non installarli**: frustrazione garantita.
 
-## ❌ Fuori portata su Atom + 2 GB
-
-N64, PSP, Dreamcast, Sega Saturn, PS2, GameCube/Wii, Naomi, sistemi 3D moderni. **Non installarli**: frustrazione garantita.
+> La GMA 3150 fa il rendering 2D in modo dignitoso ma il 3D è praticamente assente: la regola è **2D sì, 3D no**.
 
 ---
 

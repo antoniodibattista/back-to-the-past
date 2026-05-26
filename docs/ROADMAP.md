@@ -1,6 +1,6 @@
 # ROADMAP — Back To The Past
 
-Stato a oggi: **progettazione completata, inizio setup.**
+Stato a oggi: **progettazione completata, hardware Asem #1 identificato (Atom D525 / GMA 3150), inizio installazione.**
 
 ## Fase 0 — Progettazione ✅
 - [x] Definire obiettivi e vincoli (Atom 64-bit, 2 GB RAM, touch + joypad)
@@ -10,10 +10,11 @@ Stato a oggi: **progettazione completata, inizio setup.**
 - [x] Documentazione di base + struttura repo
 
 ## Fase 1 — Ricognizione hardware
-- [ ] Boot live di Batocera su Asem #1
-- [ ] Eseguire `scripts/check-hardware.sh` e annotare specifiche reali (modello Atom, RAM, dischi, GPU, touch, USB)
+- [x] Identificato modello CPU/GPU Asem #1: **Atom D525 (Pineview) + GMA 3150**, 64-bit
+- [x] Decisa build OS: **Batocera "Intel Atom / old low-powered (V5.25)"** (la GMA 3150 esclude le build moderne)
+- [ ] Boot live di Batocera (V5.25) su Asem #1
+- [ ] Eseguire `scripts/check-hardware.sh` e annotare il resto (RAM esatta, dischi, touch, USB)
 - [ ] Verificare riconoscimento touchscreen + joypad USB
-- [ ] Confermare che 2 GB reggano EmulationStation (altrimenti piano B: Lakka)
 
 ## Fase 2 — Installazione base
 - [ ] Installare Batocera sul disco interno dell'Asem #1

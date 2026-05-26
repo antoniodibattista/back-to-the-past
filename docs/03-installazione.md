@@ -12,7 +12,8 @@ Flusso completo: dal portatile di sviluppo ai due cabinati Asem.
 
 ## Fase 1 — Procurarsi Batocera (sul portatile)
 
-1. Scarica l'immagine **x86_64** da https://batocera.org/download (file `.img.gz`).
+1. Vai su https://batocera.org/download e scarica la build **"Intel Atom and old low-powered devices (V5.25)"** (file `.img.gz`).
+   - ⚠️ **NON** la build x86_64 "standard/ultima": sul nostro Atom **D525 / GMA 3150** non parte (vedi [02](02-sistema-operativo.md)).
 2. Scarica uno scrittore di immagini:
    - **balenaEtcher** (consigliato, semplice) — oppure **Rufus**.
 3. Inserisci una chiavetta USB (≥ 8 GB; verrà **cancellata**).

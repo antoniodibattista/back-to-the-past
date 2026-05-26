@@ -4,16 +4,20 @@
 
 Asem S.p.A. (Italia) produce PC industriali e panel PC con touchscreen. I nostri due esemplari montano:
 
-| Componente | Specifica nota | Da verificare |
+| Componente | Specifica | Note |
 |---|---|---|
-| CPU | Intel **Atom**, **64-bit** | modello esatto (es. N2600, D2550, E38xx, x5-Z83xx…) |
-| RAM | **2 GB** | confermare, ev. espandibilità |
-| Storage | **128 GB+** | tipo (SSD SATA / mSATA / eMMC) |
-| Display | Touchscreen | risoluzione + tecnologia touch (resistivo/capacitivo) |
-| Video | Integrata Intel (GMA / HD Graphics) | — |
-| I/O | USB (per joypad), eventuale seriale/LAN | n° porte USB libere |
+| CPU | **Intel Atom D525** ✅ confermato | Pineview (2010), dual-core 1.8 GHz, 4 thread (HT), 64-bit |
+| GPU | **Intel GMA 3150** (integrata nel D525) | ⚠️ niente accelerazione 3D utilizzabile su Linux moderno → vincola la scelta dell'OS |
+| RAM | **2 GB** | confermare ev. espandibilità |
+| Storage | **128 GB+** | tipo da verificare (SSD SATA / mSATA / eMMC) |
+| Display | Touchscreen | risoluzione + tecnologia touch (resistivo/capacitivo) da verificare |
+| I/O | USB (per joypad), eventuale seriale/LAN | n° porte USB libere da verificare |
 
-> ⚠️ **2 GB di RAM è il vincolo principale** di tutto il progetto. Determina quali sistemi possiamo emulare (arcade + console fino a 4ª/5ª gen) e impone core leggeri. Vedi [04 — Giochi consigliati](04-giochi-consigliati.md).
+> ⚠️ **Due colli di bottiglia, non uno:**
+> 1. **GPU GMA 3150** — senza 3D moderno. Impone la build **Batocera "Intel Atom / old low-powered (V5.25)"** (vedi [02](02-sistema-operativo.md)) e l'uso di soli sistemi **2D** (no PlayStation 1, no 3D). Anche il tema dev'essere leggero (no video-snap, no shader pesanti).
+> 2. **2 GB di RAM** — impone core leggeri.
+>
+> Risultato: target = arcade 2D + console fino alla 4ª gen. Vedi [04 — Giochi consigliati](04-giochi-consigliati.md).
 
 ## Verificare le specifiche reali
 

@@ -2,10 +2,24 @@
 
 ## TL;DR
 
-- **Sistema scelto:** [**Batocera.linux**](https://batocera.org) — edizione **x86_64**, installata sul disco interno dell'Asem.
-- **Frontend:** EmulationStation (incluso) — lo personalizziamo col nostro tema.
+- **Sistema scelto:** [**Batocera.linux**](https://batocera.org), build **"Intel Atom and old low-powered devices (V5.25)"**, installata sul disco interno dell'Asem.
+- **Frontend:** EmulationStation (incluso) — lo personalizziamo col nostro tema (leggero).
 - **Emulazione:** RetroArch + core libretro (inclusi).
 - **NON** scriviamo un emulatore da zero. Vedi sotto il perché.
+
+## ⚠️ Quale build di Batocera (hardware confermato: Atom D525 / GMA 3150)
+
+La pagina download di Batocera offre più immagini. Per il nostro Asem la scelta è obbligata:
+
+| Build | Per chi | Noi |
+|---|---|---|
+| **"Intel Atom and old low-powered devices (V5.25)"** | Vecchi Atom con grafica **GMA** (Pineview/Cedarview) | ✅ **questa** |
+| "Desktop PC, Laptop, NUC..." (x86_64 ultima) | PC/Atom recenti con Intel HD Graphics | ❌ schermo nero/niente accel. sul D525 |
+| "Old Desktop/Laptop 32bit" | CPU a 32 bit | ❌ il D525 è 64 bit |
+
+**Perché V5.25:** il D525 ha la GPU **GMA 3150**, il cui supporto è stato rimosso dai kernel/driver Mesa moderni. Batocera ha *congelato* la versione **5.25** (≈2020), che ha ancora i driver funzionanti per quelle GPU. È più vecchia (meno core, UI meno moderna), ma per arcade/console **2D** anni 80/90 va benissimo — ed è l'unica che parte davvero su questo hardware.
+
+> Conseguenze pratiche: solo sistemi **2D** (no PS1/3D), **tema leggero** (no video-snap, no shader pesanti), core leggeri. Tuning in [04](04-giochi-consigliati.md).
 
 ---
 
