@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<!--
+  Theme: Back To The Past
+  Stile synthwave/arcade per i cabinati Asem (Batocera, EmulationStation formatVersion 7).
+  Volutamente LEGGERO: solo immagini statiche + font pixel, niente video/shader,
+  per girare bene su Intel Atom D525 / GMA 3150.
+  Font: Press Start 2P (OFL). Asset generati da generate_assets.py.
+-->
+<theme>
+  <formatVersion>7</formatVersion>
+
+  <!-- Elementi comuni a tutte le viste: sfondo + barra aiuti -->
+  <view name="system,basic,detailed,grid">
+    <image name="background" extra="true">
+      <path>./art/background.png</path>
+      <pos>0 0</pos>
+      <origin>0 0</origin>
+      <size>1 1</size>
+      <zIndex>0</zIndex>
+    </image>
+    <helpsystem name="help">
+      <pos>0.03 0.955</pos>
+      <textColor>00e5ffcc</textColor>
+      <iconColor>ff2d95cc</iconColor>
+      <fontPath>./art/PressStart2P-Regular.ttf</fontPath>
+      <fontSize>0.024</fontSize>
+    </helpsystem>
+  </view>
+
+  <!-- ===== SYSTEM VIEW: selezione del sistema ===== -->
+  <view name="system">
+    <image name="logo_title" extra="true">
+      <path>./art/logo.png</path>
+      <pos>0.5 0.17</pos>
+      <origin>0.5 0.5</origin>
+      <maxSize>0.6 0.22</maxSize>
+      <zIndex>30</zIndex>
+    </image>
+
+    <carousel name="systemcarousel">
+      <type>horizontal</type>
+      <size>1 0.26</size>
+      <pos>0 0.40</pos>
+      <color>00000000</color>
+      <logoScale>1.4</logoScale>
+      <logoSize>0.30 0.18</logoSize>
+      <maxLogoCount>3</maxLogoCount>
+      <zIndex>40</zIndex>
+    </carousel>
+
+    <text name="logoText">
+      <fontPath>./art/PressStart2P-Regular.ttf</fontPath>
+      <fontSize>0.06</fontSize>
+      <color>ffffff</color>
+      <forceUppercase>true</forceUppercase>
+      <alignment>center</alignment>
+    </text>
+
+    <text name="systemInfo">
+      <pos>0 0.80</pos>
+      <size>1 0.05</size>
+      <fontPath>./art/PressStart2P-Regular.ttf</fontPath>
+      <fontSize>0.028</fontSize>
+      <color>00e5ff</color>
+      <backgroundColor>00000000</backgroundColor>
+      <alignment>center</alignment>
+      <forceUppercase>true</forceUppercase>
+      <zIndex>50</zIndex>
+    </text>
+  </view>
+
+  <!-- ===== BASIC: lista giochi (senza metadati) ===== -->
+  <view name="basic">
+    <image name="logo_header" extra="true">
+      <path>./art/logo.png</path>
+      <pos>0.5 0.10</pos>
+      <origin>0.5 0.5</origin>
+      <maxSize>0.4 0.14</maxSize>
+      <zIndex>30</zIndex>
+    </image>
+    <textlist name="gamelist">
+      <pos>0.08 0.22</pos>
+      <size>0.84 0.68</size>
+      <fontPath>./art/PressStart2P-Regular.ttf</fontPath>
+      <fontSize>0.032</fontSize>
+      <selectorColor>ff2d95</selectorColor>
+      <selectedColor>0a0a16</selectedColor>
+      <primaryColor>00e5ff</primaryColor>
+      <secondaryColor>ff8ad0</secondaryColor>
+      <horizontalMargin>0.02</horizontalMargin>
+      <alignment>left</alignment>
+      <lineSpacing>1.7</lineSpacing>
+      <zIndex>40</zIndex>
+    </textlist>
+  </view>
+
+  <!-- ===== DETAILED: lista + immagine + descrizione ===== -->
+  <view name="detailed">
+    <image name="logo_header" extra="true">
+      <path>./art/logo.png</path>
+      <pos>0.5 0.10</pos>
+      <origin>0.5 0.5</origin>
+      <maxSize>0.36 0.13</maxSize>
+      <zIndex>30</zIndex>
+    </image>
+    <textlist name="gamelist">
+      <pos>0.05 0.22</pos>
+      <size>0.45 0.68</size>
+      <fontPath>./art/PressStart2P-Regular.ttf</fontPath>
+      <fontSize>0.026</fontSize>
+      <selectorColor>ff2d95</selectorColor>
+      <selectedColor>0a0a16</selectedColor>
+      <primaryColor>00e5ff</primaryColor>
+      <secondaryColor>ff8ad0</secondaryColor>
+      <horizontalMargin>0.02</horizontalMargin>
+      <alignment>left</alignment>
+      <lineSpacing>1.7</lineSpacing>
+      <zIndex>40</zIndex>
+    </textlist>
+    <image name="md_image">
+      <pos>0.74 0.40</pos>
+      <origin>0.5 0.5</origin>
+      <maxSize>0.42 0.40</maxSize>
+      <zIndex>40</zIndex>
+    </image>
+    <text name="md_description">
+      <pos>0.53 0.64</pos>
+      <size>0.43 0.27</size>
+      <fontPath>./art/PressStart2P-Regular.ttf</fontPath>
+      <fontSize>0.019</fontSize>
+      <color>cfd8ff</color>
+      <zIndex>40</zIndex>
+    </text>
+  </view>
+</theme>

@@ -24,4 +24,17 @@ back-to-the-past/
 - Evitare video-snap e animazioni pesanti nelle gamelist (RAM/CPU limitate).
 - Riferimento formato temi: https://wiki.batocera.org/themes
 
-> Stato: **da fare** (Fase 3 della [ROADMAP](../docs/ROADMAP.md)). Cartella segnaposto.
+## Stato: v1 attiva su Asem #1 ✅
+
+Tema **`back-to-the-past/`** costruito e in uso. Stile **synthwave/arcade**: sfondo scuro con sole magenta e griglia neon, font pixel, accenti ciano/magenta.
+
+Contenuto:
+- `theme.xml` — viste `system` / `basic` / `detailed` (ES formatVersion 7), solo immagini statiche (niente video/shader → leggero per la GMA 3150)
+- `art/background.png` (1366×768), `art/logo.png` — generati da `generate_assets.py`
+- `art/PressStart2P-Regular.ttf` — font pixel, licenza **OFL** (libero)
+
+**Rigenerare gli asset:** `python generate_assets.py` (richiede Pillow). Modifica colori/forme lì dentro.
+
+**Deploy su Asem:** copia la cartella in `/userdata/themes/back-to-the-past/` e imposta `ThemeSet=back-to-the-past` in `es_settings.cfg` (ricorda: fermare ES → editare → riavviare ES).
+
+> In rifinitura iterativa tramite screenshot dal cabinato. TODO: eventuali loghi per-sistema, splash di boot.

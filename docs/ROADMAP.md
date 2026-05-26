@@ -22,11 +22,11 @@ Stato a oggi: **Asem #1: Batocera V5.25 installata e funzionante su SSD interna.
 - [ ] Prima configurazione joypad (quando arrivano)
 
 ## Fase 3 — Livello "Back To The Past" (sviluppo nel repo)
-- [ ] Tema EmulationStation "Back To The Past" (`theme/`)
-- [ ] File di config con tuning per Atom (`config/batocera.conf`, `es_settings.cfg`)
-- [ ] Mappe controller riproducibili (`config/controllers/`)
+- [x] Tema EmulationStation "Back To The Past" v1 (`theme/`) — synthwave/arcade, attivo su Asem #1 (in rifinitura)
+- [x] File di config con tuning per Atom (`config/batocera.conf`, `config/es_settings.cfg`)
+- [x] Selezione/struttura giochi + giochi liberi (`games/` + ScummVM)
+- [ ] Mappe controller riproducibili (`config/controllers/`) — quando arrivano i joypad
 - [ ] Script `deploy.sh` (push del repo su `/userdata` via SSH/rsync)
-- [ ] Selezione/struttura giochi + giochi liberi inclusi (`games/`)
 
 ## Fase 4 — Kiosk & finalizzazione (Asem #1)
 - [x] Modalità **Kiosk** attiva + sblocco manutenzione via SSH (vedi [05](05-kiosk-e-controlli.md))
